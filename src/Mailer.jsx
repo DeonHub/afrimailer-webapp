@@ -18,7 +18,8 @@ const Mailer = () => {
     template: "",
     useTemplate: "",
     personalize: "",
-    csvFile: null
+    csvFile: null,
+    date: ""
   });
 
 
@@ -182,9 +183,26 @@ const Mailer = () => {
                         <option value="csr">CSR Interview Invitation</option>
                         <option value="alert">Staff Alert Message</option>
                         <option value="prom">Promotional Message</option>
+                        <option value="import">Import Message</option>
                       </select>
                     </div>
                   </div>
+
+                  {formData.template === 'csr' && (
+                    <div className="col-span-full">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-900">Select Interview Date</label>
+                    <input
+                      id="date"
+                      name="date"
+                      type="date"
+                      placeholder="Enter message subject"
+                      className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  )}
+
+                  
 
                     <div className="col-span-full">
                       <label htmlFor="csvFile" className="block text-sm font-medium text-gray-900">Upload User CSV</label>
