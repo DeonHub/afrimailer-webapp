@@ -6,6 +6,7 @@ import axios from 'axios';
 import openNotification from "./components/OpenNotification";
 import Loader from "./components/Loader";
 
+
 const Mailer = () => {
 
   const [useTemplate, setUseTemplate] = useState(false);
